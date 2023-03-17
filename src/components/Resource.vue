@@ -4,7 +4,7 @@
   import Box from "./Box.vue";
   const props = defineProps<{
     name: string;
-    scrap?: number;
+    scrap?: string;
     planets?: string[];
     machines?: string[];
   }>();

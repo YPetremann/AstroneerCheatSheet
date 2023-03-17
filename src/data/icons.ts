@@ -124,8 +124,8 @@ const hashes = {
   Worklight: "d3",
 };
 
-export function icon(name: string, size?: string): string {
-  let norm = name.replaceAll(" ", "_") as string;
+export function icon(name?: string, size?: string): string {
+  let norm = String(name).replaceAll(" ", "_") as string;
   let file = `Icon_${norm}.png`;
   if (!(norm in hashes)) return icon("Packager", size);
   // @ts-ignore

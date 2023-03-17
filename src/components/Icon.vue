@@ -1,7 +1,7 @@
 <script lang="ts" setup>
   import { icon } from "../data/icons";
   const props = defineProps<{
-    name: string;
+    name?: string;
     size?: string;
   }>();
   let src = icon(props.name, props.size);

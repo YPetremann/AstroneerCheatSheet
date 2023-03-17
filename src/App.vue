@@ -102,7 +102,7 @@
           <Resource
             name="Lithium"
             :planets="['Vesania', '-Novus']"
-            :scrap="2"
+            scrap="2"
             :machines="['Trade_Platform']"
           />
           <Resource
@@ -166,21 +166,21 @@
       <Box>
         <Process name="Smelting Furnace">
           <Recipe name="Ceramic" scrap=".5" :ingredients="['Clay']" />
-          <Recipe name="Copper" :scrap="1" :ingredients="['Malachite']" />
-          <Recipe name="Aluminum" :scrap="1" :ingredients="['Laterite']" />
+          <Recipe name="Copper" scrap="1" :ingredients="['Malachite']" />
+          <Recipe name="Aluminum" scrap="1" :ingredients="['Laterite']" />
           <Recipe name="Glass" scrap=".5" :ingredients="['Quartz']" />
           <Box type="recipe" />
           <Box type="recipe" />
           <Recipe name="Carbon" :ingredients="['Organic']" />
           <Box type="recipe" />
-          <Recipe name="Tungsten" :scrap="1.5" :ingredients="['Wolframite']" />
-          <Recipe name="Iron" :scrap="1.5" :ingredients="['Hematite']" />
-          <Recipe name="Zinc" :scrap="1.5" :ingredients="['Sphalerite']" />
-          <Recipe name="Titanium" :scrap="1.5" :ingredients="['Titanium']" />
+          <Recipe name="Tungsten" scrap="1.5" :ingredients="['Wolframite']" />
+          <Recipe name="Iron" scrap="1.5" :ingredients="['Hematite']" />
+          <Recipe name="Zinc" scrap="1.5" :ingredients="['Sphalerite']" />
+          <Recipe name="Titanium" scrap="1.5" :ingredients="['Titanium']" />
         </Process>
         <Box type="process">
           <Box type="recipe" />
-          <Recipe name="EXO Chip" :scrap="3" :machines="['Trade_Platform']" />
+          <Recipe name="EXO Chip" scrap="3" :machines="['Trade_Platform']" />
         </Box>
       </Box>
       <Box>
@@ -213,19 +213,15 @@
         <Process name="Chemistry Lab">
           <Recipe
             name="Aluminum Alloy"
-            :scrap="1.5"
+            scrap="1.5"
             :ingredients="['Copper', 'Aluminum']"
           />
           <Recipe
             name="Silicone"
-            :scrap="1"
+            scrap="1"
             :ingredients="['Quartz', 'Resin']"
           />
-          <Recipe
-            name="Rubber"
-            :scrap="1"
-            :ingredients="['Resin', 'Organic']"
-          />
+          <Recipe name="Rubber" scrap="1" :ingredients="['Resin', 'Organic']" />
           <Recipe
             name="Explosive Powder"
             :ingredients="['Carbon', 'Carbon', 'Sulfur']"
@@ -237,24 +233,24 @@
           />
           <Recipe
             name="Tungsten Carbide"
-            :scrap="1.5"
+            scrap="1.5"
             :ingredients="['Carbon', 'Tungsten']"
           />
-          <Recipe name="Steel" :scrap="1.5" :ingredients="['Carbon', 'Iron']" />
+          <Recipe name="Steel" scrap="1.5" :ingredients="['Carbon', 'Iron']" />
           <Recipe
             name="Nanocarbon Alloy"
-            :scrap="2"
+            scrap="2"
             :ingredients="['Steel', 'Titanium Alloy', 'Helium']"
           />
           <Recipe
             name="Titanium Alloy"
-            :scrap="1.5"
+            scrap="1.5"
             :ingredients="['Titanium', 'Nitrogen', 'Graphene']"
           />
           <Recipe name="Graphene" :ingredients="['Graphite', 'Hydrazine']" />
           <Recipe
             name="Diamond"
-            :scrap="2"
+            scrap="2"
             :ingredients="['Graphene', 'Graphene']"
           />
           <Recipe
