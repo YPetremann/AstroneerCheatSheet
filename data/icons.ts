@@ -109,7 +109,7 @@ const hashes = {
   Small_Camera: "1e",
   Smelting_Furnace: "51",
   Soil_Centrifuge: "49",
-  Solar: "93",
+  Solar: "77",
   Splitter: "d6",
   Storage: "3e",
   Tether: "ec",

@@ -1,17 +1,14 @@
 <script lang="ts" setup>
-  import { ref } from "vue";
-  import { useElementSize } from "@vueuse/core";
-
-  import Process from "./components/Process.vue";
-  import Arrow from "./components/Arrow.vue";
-  import ArrowGroup from "./components/ArrowGroup.vue";
-  import CheatSheet from "./components/CheatSheet.vue";
-  import Page from "./components/Page.vue";
-  import Resource from "./components/Resource.vue";
-  import Recipe from "./components/Recipe.vue";
-  import Planet from "./components/Planet.vue";
-  import Box from "./components/Box.vue";
-  import Item from "./components/Item.vue";
+  import Process from "../components/Process.vue";
+  import Arrow from "../components/Arrow.vue";
+  import ArrowGroup from "../components/ArrowGroup.vue";
+  import CheatSheet from "../components/CheatSheet.vue";
+  import Page from "../components/Page.vue";
+  import Resource from "../components/Resource.vue";
+  import Recipe from "../components/Recipe.vue";
+  import Planet from "../components/Planet.vue";
+  import Box from "../components/Box.vue";
+  import Item from "../components/Item.vue";
   const all_planets = [
     "Sylva",
     "Desolo",
@@ -21,17 +18,15 @@
     "Glacio",
     "Atrox",
   ];
-  const page = ref(null);
-  const { width, height } = useElementSize(page);
 </script>
 
 <template>
   <CheatSheet>
-    <Page ref="page">
+    <Page>
       <svg
         style="position: absolute; left: 0px; top: 0px; pointer-events: none"
-        :width="width"
-        :height="height"
+        :width="1920"
+        :height="1080"
       >
         <ArrowGroup>
           <Arrow from="1;2;R" to="2;2;L" />
@@ -165,18 +160,62 @@
       </Box>
       <Box>
         <Process name="Smelting Furnace">
-          <Recipe name="Ceramic" scrap=".5" :ingredients="['Clay']" />
-          <Recipe name="Copper" scrap="1" :ingredients="['Malachite']" />
-          <Recipe name="Aluminum" scrap="1" :ingredients="['Laterite']" />
-          <Recipe name="Glass" scrap=".5" :ingredients="['Quartz']" />
+          <Recipe
+            name="Ceramic"
+            scrap=".5"
+            :ingredients="['Clay']"
+            :machines="['Smelting_Furnace']"
+          />
+          <Recipe
+            name="Copper"
+            scrap="1"
+            :ingredients="['Malachite']"
+            :machines="['Smelting_Furnace']"
+          />
+          <Recipe
+            name="Aluminum"
+            scrap="1"
+            :ingredients="['Laterite']"
+            :machines="['Smelting_Furnace']"
+          />
+          <Recipe
+            name="Glass"
+            scrap=".5"
+            :ingredients="['Quartz']"
+            :machines="['Smelting_Furnace']"
+          />
           <Box type="recipe" />
           <Box type="recipe" />
-          <Recipe name="Carbon" :ingredients="['Organic']" />
+          <Recipe
+            name="Carbon"
+            :ingredients="['Organic']"
+            :machines="['Smelting_Furnace']"
+          />
           <Box type="recipe" />
-          <Recipe name="Tungsten" scrap="1.5" :ingredients="['Wolframite']" />
-          <Recipe name="Iron" scrap="1.5" :ingredients="['Hematite']" />
-          <Recipe name="Zinc" scrap="1.5" :ingredients="['Sphalerite']" />
-          <Recipe name="Titanium" scrap="1.5" :ingredients="['Titanium']" />
+          <Recipe
+            name="Tungsten"
+            scrap="1.5"
+            :ingredients="['Wolframite']"
+            :machines="['Smelting_Furnace']"
+          />
+          <Recipe
+            name="Iron"
+            scrap="1.5"
+            :ingredients="['Hematite']"
+            :machines="['Smelting_Furnace']"
+          />
+          <Recipe
+            name="Zinc"
+            scrap="1.5"
+            :ingredients="['Sphalerite']"
+            :machines="['Smelting_Furnace']"
+          />
+          <Recipe
+            name="Titanium"
+            scrap="1.5"
+            :ingredients="['Titanium']"
+            :machines="['Smelting_Furnace']"
+          />
         </Process>
         <Box type="process">
           <Box type="recipe" />
@@ -215,48 +254,70 @@
             name="Aluminum Alloy"
             scrap="1.5"
             :ingredients="['Copper', 'Aluminum']"
+            :machines="['Chemistry Lab']"
           />
           <Recipe
             name="Silicone"
             scrap="1"
             :ingredients="['Quartz', 'Resin']"
+            :machines="['Chemistry Lab']"
           />
-          <Recipe name="Rubber" scrap="1" :ingredients="['Resin', 'Organic']" />
+          <Recipe
+            name="Rubber"
+            scrap="1"
+            :ingredients="['Resin', 'Organic']"
+            :machines="['Chemistry Lab']"
+          />
           <Recipe
             name="Explosive Powder"
             :ingredients="['Carbon', 'Carbon', 'Sulfur']"
+            :machines="['Chemistry Lab']"
           />
           <Recipe
             name="Plastic"
             scrap=".5"
             :ingredients="['Carbon', 'Compound']"
+            :machines="['Chemistry Lab']"
           />
           <Recipe
             name="Tungsten Carbide"
             scrap="1.5"
             :ingredients="['Carbon', 'Tungsten']"
+            :machines="['Chemistry Lab']"
           />
-          <Recipe name="Steel" scrap="1.5" :ingredients="['Carbon', 'Iron']" />
+          <Recipe
+            name="Steel"
+            scrap="1.5"
+            :ingredients="['Carbon', 'Iron']"
+            :machines="['Chemistry Lab']"
+          />
           <Recipe
             name="Nanocarbon Alloy"
             scrap="2"
             :ingredients="['Steel', 'Titanium Alloy', 'Helium']"
+            :machines="['Chemistry Lab']"
           />
           <Recipe
             name="Titanium Alloy"
             scrap="1.5"
             :ingredients="['Titanium', 'Nitrogen', 'Graphene']"
+            :machines="['Chemistry Lab']"
           />
-          <Recipe name="Graphene" :ingredients="['Graphite', 'Hydrazine']" />
+          <Recipe
+            name="Graphene"
+            :ingredients="['Graphite', 'Hydrazine']"
+            :machines="['Chemistry Lab']"
+          />
           <Recipe
             name="Diamond"
             scrap="2"
             :ingredients="['Graphene', 'Graphene']"
+            :machines="['Chemistry Lab']"
           />
           <Recipe
             name="Hydrazine"
             :ingredients="['Hydrogen', 'Ammonium', 'Ammonium']"
-            :machines="['Trade_Platform']"
+            :machines="['Trade_Platform', 'Chemistry Lab']"
           />
         </Process>
       </Box>
@@ -296,22 +357,40 @@
           />
         </Box>
         <Process name="Atmospheric Condenser">
-          <Resource name="Methane" :planets="['-Novus', 'Atrox']" />
+          <Resource
+            name="Methane"
+            :planets="['-Novus', 'Atrox']"
+            :machines="['Atmospheric Condenser']"
+          />
           <Box type="recipe" />
-          <Resource name="Sulfur" :planets="['Calidor', '-Atrox']" />
+          <Resource
+            name="Sulfur"
+            :planets="['Calidor', '-Atrox']"
+            :machines="['Atmospheric Condenser']"
+          />
           <Box type="recipe" />
           <Box type="recipe" />
-          <Resource name="Argon" :planets="['-Vesania', 'Glacio']" />
-          <Resource name="Helium" :planets="['Atrox']" />
+          <Resource
+            name="Argon"
+            :planets="['-Vesania', 'Glacio']"
+            :machines="['Atmospheric Condenser']"
+          />
+          <Resource
+            name="Helium"
+            :planets="['Atrox']"
+            :machines="['Atmospheric Condenser']"
+          />
           <Resource
             name="Nitrogen"
             :planets="['Sylva', '-Vesania', '-Atrox']"
+            :machines="['Atmospheric Condenser']"
           />
           <Box type="recipe" />
           <Box type="recipe" />
           <Resource
             name="Hydrogen"
             :planets="['-Sylva', '-Calidor', 'Vesania', '-Novus']"
+            :machines="['Atmospheric Condenser']"
           />
         </Process>
       </Box>
@@ -1106,12 +1185,6 @@
         </Process>
       </Box>
     </Page>
-  </CheatSheet>
-  <CheatSheet style="display: none">
-    <img
-      src="/assets/image_cheatsheet.png?url"
-      alt="Old Astroneer CheatSheet"
-    />
   </CheatSheet>
 </template>
 

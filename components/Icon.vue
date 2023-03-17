@@ -8,5 +8,10 @@
 </script>
 
 <template>
-  <img :src="src" :alt="`${props.name}`" v-bind="$attrs" />
+  <img
+    :src="src"
+    :title="`${props.name}`"
+    :alt="`${props.name}`"
+    v-bind="$attrs"
+  />
 </template>
