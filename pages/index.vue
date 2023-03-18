@@ -3,7 +3,6 @@
   import Process from "../components/Process.vue";
   import Arrow from "../components/Arrow.vue";
   import ArrowGroup from "../components/ArrowGroup.vue";
-  import CheatSheet from "../components/CheatSheet.vue";
   import Page from "../components/Page.vue";
   import Resource from "../components/Resource.vue";
   import Recipe from "../components/Recipe.vue";
@@ -75,337 +74,91 @@
     </svg>
     <Box>
       <Process name="Mining" icon="Drill">
-        <Resource
-          name="Clay"
-          :planets="all_planets"
-          :machines="['Soil Centrifuge', 'Trade Platform']"
-        />
-        <Resource
-          name="Malachite"
-          :planets="['-Sylva', 'Calidor']"
-          :machines="['Trade Platform']"
-        />
-        <Resource
-          name="Laterite"
-          :planets="all_planets"
-          :machines="['Trade Platform']"
-        />
-        <Resource
-          name="Quartz"
-          scrap=".25"
-          :planets="all_planets"
-          :machines="['Soil Centrifuge', 'Trade Platform']"
-        />
-        <Resource
-          name="Lithium"
-          :planets="['Vesania', '-Novus']"
-          scrap="2"
-          :machines="['Trade Platform']"
-        />
-        <Resource
-          name="Resin"
-          :planets="all_planets"
-          scrap=".25"
-          :machines="['Soil Centrifuge', 'Trade Platform']"
-        />
-        <Resource
-          name="Organic"
-          :planets="all_planets"
-          scrap=".25"
-          :machines="['Soil Centrifuge', 'Trade Platform']"
-        />
-        <Resource
-          name="Compound"
-          :planets="all_planets"
-          scrap=".25"
-          :machines="['Soil Centrifuge', 'Trade Platform']"
-        />
-        <Resource
-          name="Wolframite"
-          :planets="['Desolo', '-Calidor']"
-          :machines="['Trade Platform']"
-        />
-        <Resource
-          name="Hematite"
-          :planets="['Novus', '-Glacio']"
-          :machines="['Trade Platform']"
-        />
-        <Resource
-          name="Sphalerite"
-          :planets="['Sylva', '-Desolo']"
-          :machines="['Trade Platform']"
-        />
-        <Resource
-          name="Titanite"
-          :planets="['-Vesania', 'Glacio']"
-          :machines="['Trade Platform']"
-        />
-        <Resource
-          name="Graphite"
-          :planets="all_planets"
-          scrap=".25"
-          :machines="['Soil Centrifuge', 'Trade Platform']"
-        />
-        <Resource
-          name="Astronium"
-          :planets="all_planets"
-          scrap=".5"
-          :machines="[]"
-        />
-        <Resource
-          name="Ammonium"
-          :planets="all_planets"
-          scrap=".5"
-          :machines="['Soil Centrifuge', 'Trade Platform']"
-        />
+        <Resource name="Clay" />
+        <Resource name="Malachite" />
+        <Resource name="Laterite" />
+        <Resource name="Quartz" />
+        <Resource name="Lithium" />
+        <Resource name="Resin" />
+        <Resource name="Organic" />
+        <Resource name="Compound" />
+        <Resource name="Wolframite" />
+        <Resource name="Hematite" />
+        <Resource name="Sphalerite" />
+        <Resource name="Titanite" />
+        <Resource name="Graphite" />
+        <Resource name="Astronium" />
+        <Resource name="Ammonium" />
       </Process>
     </Box>
     <Box>
       <Process name="Smelting Furnace">
-        <Recipe
-          name="Ceramic"
-          scrap=".5"
-          :ingredients="['Clay']"
-          :machines="['Smelting Furnace']"
-        />
-        <Recipe
-          name="Copper"
-          scrap="1"
-          :ingredients="['Malachite']"
-          :machines="['Smelting Furnace']"
-        />
-        <Recipe
-          name="Aluminum"
-          scrap="1"
-          :ingredients="['Laterite']"
-          :machines="['Smelting Furnace']"
-        />
-        <Recipe
-          name="Glass"
-          scrap=".5"
-          :ingredients="['Quartz']"
-          :machines="['Smelting Furnace']"
-        />
+        <Resource name="Ceramic" />
+        <Resource name="Copper" />
+        <Resource name="Aluminum" />
+        <Resource name="Glass" />
         <Box type="recipe" />
         <Box type="recipe" />
-        <Recipe
-          name="Carbon"
-          :ingredients="['Organic']"
-          :machines="['Smelting Furnace']"
-        />
+        <Resource name="Carbon" />
         <Box type="recipe" />
-        <Recipe
-          name="Tungsten"
-          scrap="1.5"
-          :ingredients="['Wolframite']"
-          :machines="['Smelting Furnace']"
-        />
-        <Recipe
-          name="Iron"
-          scrap="1.5"
-          :ingredients="['Hematite']"
-          :machines="['Smelting Furnace']"
-        />
-        <Recipe
-          name="Zinc"
-          scrap="1.5"
-          :ingredients="['Sphalerite']"
-          :machines="['Smelting Furnace']"
-        />
-        <Recipe
-          name="Titanium"
-          scrap="1.5"
-          :ingredients="['Titanium']"
-          :machines="['Smelting Furnace']"
-        />
+        <Resource name="Tungsten" />
+        <Resource name="Iron" />
+        <Resource name="Zinc" />
+        <Resource name="Titanium" />
       </Process>
-      <Box type="process">
-        <Box type="recipe" />
-        <Recipe
-          name="EXO Chip"
-          scrap="3"
-          :machines="['Reward', 'Trade Platform']"
-        />
-      </Box>
+      <div style="height: 30px"></div>
+      <Process>
+        <Resource name="EXO Chip" />
+        <Resource name="Scrap" />
+      </Process>
     </Box>
     <Box>
       <Box type="process">
-        <Planet
-          name="Sylva"
-          gateway="Quartz"
-          solar="normal"
-          wind="normal"
-          :minerals="['Sphalerite', '-Malachite']"
-          :gases="['Nitrogen', '-Hydrogen']"
-        />
-        <Planet
-          name="Desolo"
-          gateway="Sphalerite"
-          solar="good"
-          wind="low"
-          :minerals="['Wolframite', '-Sphalerite']"
-          :gases="[]"
-        />
-        <Planet
-          name="Calidor"
-          gateway="Explosive Powder"
-          solar="great"
-          wind="low"
-          :minerals="['Malachite', '-Wolframite']"
-          :gases="['Sulfur', '-Hydrogen']"
-        />
+        <Planet name="Sylva" />
+        <Planet name="Desolo" />
+        <Planet name="Calidor" />
       </Box>
       <Process name="Chemistry Lab">
-        <Recipe
-          name="Aluminum Alloy"
-          scrap="1.5"
-          :ingredients="['Copper', 'Aluminum']"
-          :machines="['Chemistry Lab']"
-        />
-        <Recipe
-          name="Silicone"
-          scrap="1"
-          :ingredients="['Quartz', 'Resin']"
-          :machines="['Chemistry Lab']"
-        />
-        <Recipe
-          name="Rubber"
-          scrap="1"
-          :ingredients="['Resin', 'Organic']"
-          :machines="['Chemistry Lab']"
-        />
-        <Recipe
-          name="Explosive Powder"
-          :ingredients="['Carbon', 'Carbon', 'Sulfur']"
-          :machines="['Chemistry Lab']"
-        />
-        <Recipe
-          name="Plastic"
-          scrap=".5"
-          :ingredients="['Carbon', 'Compound']"
-          :machines="['Chemistry Lab']"
-        />
-        <Recipe
-          name="Tungsten Carbide"
-          scrap="1.5"
-          :ingredients="['Carbon', 'Tungsten']"
-          :machines="['Chemistry Lab']"
-        />
-        <Recipe
-          name="Steel"
-          scrap="1.5"
-          :ingredients="['Carbon', 'Iron']"
-          :machines="['Chemistry Lab']"
-        />
-        <Recipe
-          name="Nanocarbon Alloy"
-          scrap="2"
-          :ingredients="['Steel', 'Titanium Alloy', 'Helium']"
-          :machines="['Chemistry Lab']"
-        />
-        <Recipe
-          name="Titanium Alloy"
-          scrap="1.5"
-          :ingredients="['Titanium', 'Nitrogen', 'Graphene']"
-          :machines="['Chemistry Lab']"
-        />
-        <Recipe
-          name="Graphene"
-          :ingredients="['Graphite', 'Hydrazine']"
-          :machines="['Chemistry Lab']"
-        />
-        <Recipe
-          name="Diamond"
-          scrap="2"
-          :ingredients="['Graphene', 'Graphene']"
-          :machines="['Chemistry Lab']"
-        />
-        <Recipe
-          name="Hydrazine"
-          :ingredients="['Hydrogen', 'Ammonium', 'Ammonium']"
-          :machines="['Reward', 'Trade Platform', 'Chemistry Lab']"
-        />
+        <Resource name="Aluminum Alloy" />
+        <Resource name="Silicone" />
+        <Resource name="Rubber" />
+        <Resource name="Explosive Powder" />
+        <Resource name="Plastic" />
+        <Resource name="Tungsten Carbide" />
+        <Resource name="Steel" />
+        <Resource name="Nanocarbon Alloy" />
+        <Resource name="Titanium Alloy" />
+        <Resource name="Graphene" />
+        <Resource name="Diamond" />
+        <Resource name="Hydrazine" />
       </Process>
     </Box>
     <Box>
       <Box type="process">
-        <Planet
-          name="Vesania"
-          gateway="Quartz"
-          solar="bad"
-          wind="good"
-          :minerals="['Sphalerite', '-Malachite']"
-          :gases="['Hydrogen', '-Nitrogen', '-Argon']"
-        />
-        <Planet
-          name="Novus"
-          gateway="Quartz"
-          solar="good"
-          wind="good"
-          :minerals="['Sphalerite', '-Malachite']"
-          :gases="['-Methane', '-Hydrogen']"
-        />
-        <Planet
-          name="Glacio"
-          gateway="Quartz"
-          solar="worst"
-          wind="great"
-          :minerals="['Sphalerite', '-Malachite']"
-          :gases="['Argon']"
-        />
-        <Planet
-          name="Atrox"
-          gateway="Quartz"
-          solar="bad"
-          wind="bad"
-          :minerals="['Sphalerite', '-Malachite']"
-          :gases="['Methane', 'Helium', '-Sulfur', '-Nitrogen']"
-        />
+        <Planet name="Vesania" />
+        <Planet name="Novus" />
+        <Planet name="Glacio" />
+        <Planet name="Atrox" />
       </Box>
       <Process name="Atmospheric Condenser">
-        <Resource
-          name="Methane"
-          :planets="['-Novus', 'Atrox']"
-          :machines="['Atmospheric Condenser']"
-        />
+        <Resource name="Methane" />
         <Box type="recipe" />
-        <Resource
-          name="Sulfur"
-          :planets="['Calidor', '-Atrox']"
-          :machines="['Atmospheric Condenser']"
-        />
+        <Resource name="Sulfur" />
         <Box type="recipe" />
         <Box type="recipe" />
-        <Resource
-          name="Argon"
-          :planets="['-Vesania', 'Glacio']"
-          :machines="['Atmospheric Condenser']"
-        />
-        <Resource
-          name="Helium"
-          :planets="['Atrox']"
-          :machines="['Atmospheric Condenser']"
-        />
-        <Resource
-          name="Nitrogen"
-          :planets="['Sylva', '-Vesania', '-Atrox']"
-          :machines="['Atmospheric Condenser']"
-        />
+        <Resource name="Argon" />
+        <Resource name="Helium" />
+        <Resource name="Nitrogen" />
         <Box type="recipe" />
         <Box type="recipe" />
-        <Resource
-          name="Hydrogen"
-          :planets="['-Sylva', '-Calidor', 'Vesania', '-Novus']"
-          :machines="['Atmospheric Condenser']"
-        />
+        <Resource name="Hydrogen" />
       </Process>
     </Box>
     <Box type="divider">
-      <Process compact>
-d        <Item icon="Scrap" name="Scrap" :machines="['Reward', 'Shredder']" />
+      <Box type="process" filled compact>
         <Item
           icon="Tier Medium"
-          name="Sm Printer"
+          name="Small Printer"
           :ingredients="['Compound']"
           :machines="['Reward', 'Backpack']"
         />
@@ -422,25 +175,23 @@ d        <Item icon="Scrap" name="Scrap" :machines="['Reward', 'Shredder']" />
         />
         <Item
           icon="Canister"
-          name="Sm Can."
+          name="Small Canister"
           :ingredients="['Resin']"
           :machines="['Reward', 'Backpack']"
         />
         <Item
-          icon="Beacon"
           name="Beacon"
           :ingredients="['Quartz']"
           :machines="['Reward', 'Backpack']"
         />
         <Item
-          icon="Worklight"
           name="Worklight"
           :ingredients="['Copper']"
           :machines="['Reward', 'Backpack']"
         />
         <Item
           icon="Generator"
-          name="Sm Generator"
+          name="Small Generator"
           :ingredients="['Compound']"
           :machines="['Backpack']"
         />
@@ -457,7 +208,6 @@ d        <Item icon="Scrap" name="Scrap" :machines="['Reward', 'Shredder']" />
           :machines="['Backpack']"
         />
         <Item
-          icon="Oxygen Tank"
           name="Oxygen Tank"
           unlock="2k"
           :ingredients="['Glass']"
@@ -465,7 +215,7 @@ d        <Item icon="Scrap" name="Scrap" :machines="['Reward', 'Shredder']" />
         />
         <Item
           icon="Oxygenator"
-          name="Port. Oxygenator"
+          name="Portable Oxygenator"
           unlock="10k"
           :ingredients="['Nanocarbon Alloy']"
           :machines="['Reward', 'Mission Log', 'Backpack']"
@@ -493,21 +243,21 @@ d        <Item icon="Scrap" name="Scrap" :machines="['Reward', 'Shredder']" />
         />
         <Item
           icon="Solar Panel"
-          name="Sm Solar Panel"
+          name="Small Solar Panel"
           unlock="300"
           :ingredients="['Copper']"
           :machines="['Backpack']"
         />
         <Item
           icon="Wind Turbine"
-          name="Sm Wind Turb."
+          name="Small Wind Turbine"
           unlock="300"
           :ingredients="['Ceramic']"
           :machines="['Backpack']"
         />
         <Item
           icon="Battery"
-          name="Sm Bat."
+          name="Small Battery"
           unlock="2k"
           :ingredients="['Zinc']"
           :machines="['Reward', 'Mission Log', 'Backpack']"
@@ -564,34 +314,20 @@ d        <Item icon="Scrap" name="Scrap" :machines="['Reward', 'Shredder']" />
         <Item
           icon="Augment"
           name="Drill Mod 3"
-          unlock="~4k"
+          unlock="3.75k"
           :ingredients="['Diamond']"
           :machines="['Reward', 'Backpack']"
         />
         <Item
-          icon="Dynamite"
-          name="Dynamite"
-          unlock="~4k"
-          :ingredients="['Explosive Powder']"
-          :machines="['Backpack']"
-        />
-        <Item
-          icon="Fireworks"
-          name="Fireworks"
-          unlock="~4k"
-          :ingredients="['Explosive Powder']"
-          :machines="['Reward', 'Backpack']"
-        />
-        <Item
-          icon="Sm Camera"
-          name="Sm Camera"
+          icon="Small Camera"
+          name="Small Camera"
           unlock="2,5k"
           :ingredients="['EXO Chip']"
           :machines="['Reward', 'Backpack']"
         />
         <Item
           icon="Horn"
-          name="Sm Trumpet Horn"
+          name="Small Trumpet Horn"
           unlock="1k"
           :ingredients="['Resin']"
           :machines="['Reward', 'Mission Log', 'Backpack']"
@@ -602,6 +338,20 @@ d        <Item icon="Scrap" name="Scrap" :machines="['Reward', 'Shredder']" />
           unlock="3k"
           :ingredients="['Plastic']"
           :machines="['Backpack']"
+        />
+        <Item
+          icon="Dynamite"
+          name="Dynamite"
+          unlock="3.75k"
+          :ingredients="['Explosive Powder']"
+          :machines="['Backpack']"
+        />
+        <Item
+          icon="Fireworks"
+          name="Fireworks"
+          unlock="3.75k"
+          :ingredients="['Explosive Powder']"
+          :machines="['Reward', 'Backpack']"
         />
         <Item
           icon="Augment"
@@ -631,17 +381,16 @@ d        <Item icon="Scrap" name="Scrap" :machines="['Reward', 'Shredder']" />
           :ingredients="['Titanium Alloy']"
           :machines="['Reward', 'Mission Log', 'Backpack']"
         />
+        <Item icon="Generator" name="QT-RTG" :machines="['Reward']" />
         <Item
           icon="Hoverboard"
           name="Hoverboard"
-          unlock="Mission"
           :ingredients="['EXO Chip']"
           :machines="['Reward', 'Mission Log', 'Backpack']"
         />
-        <Item icon="Generator" name="QT-RTG" :machines="['Reward']" />
         <Item
           icon="Tier Large"
-          name="Md Printer"
+          name="Medium Printer"
           :ingredients="['Compound', 'Compound']"
           :machines="['Tier Medium']"
         />
@@ -654,7 +403,7 @@ d        <Item icon="Scrap" name="Scrap" :machines="['Reward', 'Shredder']" />
         />
         <Item
           icon="Shredder"
-          name="Md Shredder"
+          name="Medium Shredder"
           unlock="1,25k"
           :ingredients="['Iron', 'Iron']"
           :machines="['Reward', 'Mission Log', 'Tier Medium']"
@@ -675,42 +424,42 @@ d        <Item icon="Scrap" name="Scrap" :machines="['Reward', 'Shredder']" />
         />
         <Item
           icon="Canister"
-          name="Md Res. Can."
+          name="Medium Resource Canister"
           unlock="2k"
           :ingredients="['Plastic', 'Glass']"
           :machines="['Tier Medium']"
         />
         <Item
           icon="Canister"
-          name="Md Fluid Can."
+          name="Medium Fluid & Soil Canister"
           unlock="2,5k"
           :ingredients="['Plastic', 'Glass']"
           :machines="['Tier Medium']"
         />
         <Item
           icon="Canister"
-          name="Md Gas Can."
+          name="Medium Gas Canister"
           unlock="4k"
           :ingredients="['Silicone', 'Glass']"
           :machines="['Reward', 'Mission Log', 'Tier Medium']"
         />
         <Item
           icon="Sensor"
-          name="Power Sens."
+          name="Power Sensor"
           unlock="500"
           :ingredients="['Zinc', 'Copper']"
           :machines="['Tier Medium']"
         />
         <Item
           icon="Sensor"
-          name="Storage Sens."
+          name="Storage Sensor"
           unlock="750"
           :ingredients="['Zinc', 'Quartz']"
           :machines="['Tier Medium']"
         />
         <Item
           icon="Sensor"
-          name="Battery Sens."
+          name="Battery Sensor"
           unlock="750"
           :ingredients="['Zinc', 'Graphite']"
           :machines="['Tier Medium']"
@@ -745,7 +494,7 @@ d        <Item icon="Scrap" name="Scrap" :machines="['Reward', 'Shredder']" />
         />
         <Item
           icon="Power Extenders"
-          name="Power Ext."
+          name="Power Extender"
           unlock="500"
           :ingredients="['Copper']"
           :machines="['Mission Log', 'Tier Medium']"
@@ -766,29 +515,29 @@ d        <Item icon="Scrap" name="Scrap" :machines="['Reward', 'Shredder']" />
         />
         <Item
           icon="Generator"
-          name="Md Generator"
+          name="Medium Generator"
           unlock="2k"
           :ingredients="['Aluminum', 'Tungsten']"
           :machines="['Mission Log', 'Tier Medium']"
         />
         <Item
           icon="Solar Panel"
-          name="Md Solar Panel"
+          name="Medium Solar Panel"
           unlock="2k"
           :ingredients="['Copper', 'Glass']"
           :machines="['Reward', 'Tier Medium']"
         />
         <Item
           icon="Wind Turbine"
-          name="Md Wind Turb."
+          name="Medium Wind Turbine"
           unlock="2,5k"
           :ingredients="['Aluminum', 'Ceramic']"
           :machines="['Tier Medium']"
         />
         <Item
           icon="Battery"
-          name="Md Battery"
-          unlock="~4k"
+          name="Medium Battery"
+          unlock="3.75k"
           :ingredients="['Lithium', 'Zinc']"
           :machines="['Reward', 'Tier Medium']"
         />
@@ -801,54 +550,54 @@ d        <Item icon="Scrap" name="Scrap" :machines="['Reward', 'Shredder']" />
         />
         <Item
           icon="Platforms"
-          name="Md Plat. A"
+          name="Medium Platform A"
           :ingredients="['Resin']"
           :machines="['Reward', 'Tier Medium']"
         />
         <Item
           icon="Platforms"
-          name="Md Plat. B"
+          name="Medium Platform B"
           unlock="250"
           :ingredients="['Resin', 'Resin']"
           :machines="['Tier Medium']"
         />
         <Item
           icon="Platforms"
-          name="Md Plat. C"
+          name="Medium Platform C"
           unlock="400"
           :ingredients="['Resin']"
           :machines="['Tier Medium']"
         />
         <Item
           icon="Platforms"
-          name="Tall Plat."
+          name="Tall Platform"
           unlock="750"
           :ingredients="['Ceramic']"
           :machines="['Tier Medium']"
         />
         <Item
           icon="Platforms"
-          name="Md T-Platform"
+          name="Medium T-Platform"
           unlock="400"
           :ingredients="['Resin', 'Resin']"
           :machines="['Tier Medium']"
         />
         <Item
           icon="Storage"
-          name="Md Stor."
+          name="Medium Storage"
           :ingredients="['Resin', 'Resin']"
           :machines="['Reward', 'Tier Medium']"
         />
         <Item
           icon="Storage"
-          name="Md Stor. Silo"
+          name="Medium Storage Silo"
           unlock="3k"
           :ingredients="['Titanium', 'Titanium']"
           :machines="['Reward', 'Tier Medium']"
         />
         <Item
           icon="Storage"
-          name="Tall Stor."
+          name="Tall Storage"
           unlock="400"
           :ingredients="['Ceramic']"
           :machines="['Tier Medium']"
@@ -875,7 +624,7 @@ d        <Item icon="Scrap" name="Scrap" :machines="['Reward', 'Shredder']" />
         />
         <Item
           icon="Horn"
-          name="Md Buggy Horn"
+          name="Medium Buggy Horn"
           unlock="2k"
           :ingredients="['Plastic', 'Rubber']"
           :machines="['Tier Medium']"
@@ -883,7 +632,7 @@ d        <Item icon="Scrap" name="Scrap" :machines="['Reward', 'Shredder']" />
         <Item
           icon="Winch"
           name="Winch"
-          unlock="~4k"
+          unlock="3.75k"
           :ingredients="['EXO Chip', 'Rubber']"
           :machines="['Tier Medium']"
         />
@@ -917,15 +666,15 @@ d        <Item icon="Scrap" name="Scrap" :machines="['Reward', 'Shredder']" />
         />
         <Item
           icon="Thruster"
-          name="Solid-Fuel Thr."
+          name="Solid-Fuel Thruster"
           unlock="500"
           :ingredients="['Aluminum', 'Ammonium']"
           :machines="['Reward', 'Tier Medium']"
         />
         <Item
           icon="Thruster"
-          name="Hydrazine Thr."
-          unlock="~4k"
+          name="Hydrazine Thruster"
+          unlock="3.75k"
           :ingredients="['EXO Chip', 'Steel']"
           :machines="['Reward', 'Mission Log', 'Tier Medium']"
         />
@@ -952,34 +701,34 @@ d        <Item icon="Scrap" name="Scrap" :machines="['Reward', 'Shredder']" />
         />
         <Item
           icon="Tier Extra Large"
-          name="L Printer"
+          name="Large Printer"
           :ingredients="['Compound', 'Compound', 'Compound']"
           :machines="['Tier Large']"
         />
         <Item
           icon="Smelting Furnace"
-          name="Smelt. Furn."
+          name="Smelting Furnace"
           unlock="250"
           :ingredients="['Compound', 'Resin', 'Resin']"
           :machines="['Tier Large']"
         />
         <Item
           icon="Soil Centrifuge"
-          name="Soil Centr."
+          name="Soil Centrifuge"
           unlock="750"
           :ingredients="['Compound', 'Compound', 'Aluminum']"
           :machines="['Reward', 'Mission Log', 'Tier Large']"
         />
         <Item
           icon="Chemistry Lab"
-          name="Chem. Lab"
+          name="Chemistry Lab"
           unlock="1,6k"
           :ingredients="['Ceramic', 'Glass', 'Tungsten']"
           :machines="['Tier Large']"
         />
         <Item
           icon="Atmospheric Condenser"
-          name="Atmos. Cond."
+          name="Atmospheric Condenser"
           unlock="2,2k"
           :ingredients="['Plastic', 'Glass', 'Iron']"
           :machines="['Tier Large']"
@@ -992,110 +741,110 @@ d        <Item icon="Scrap" name="Scrap" :machines="['Reward', 'Shredder']" />
         />
         <Item
           icon="Trade Platform"
-          name="EXO Request Plat."
+          name="EXO Request Platform"
           :ingredients="['Resin', 'Resin', 'Ceramic']"
           :machines="['Tier Large']"
         />
         <Item
           icon="Trade Platform"
-          name="Trade Plat."
+          name="Trade Platform"
           unlock="2,5k"
           :ingredients="['Iron', 'Tungsten', 'EXO Chip']"
           :machines="['Reward', 'Mission Log', 'Tier Large']"
         />
         <Item
           icon="Shredder"
-          name="L Shredder"
+          name="Large Shredder"
           unlock="2,5k"
           :ingredients="['Tungsten Carbide', 'Iron', 'EXO Chip']"
           :machines="['Tier Large']"
         />
         <Item
           icon="Solar Panel"
-          name="L Solar Panel"
+          name="Large Solar Panel"
           unlock="4k"
           :ingredients="['Aluminum Alloy', 'Glass', 'Copper']"
           :machines="['Tier Large']"
         />
         <Item
           icon="Wind Turbine"
-          name="L Wind Turb."
+          name="Large Wind Turbine"
           unlock="3,5k"
           :ingredients="['Aluminum Alloy', 'Glass', 'Ceramic']"
           :machines="['Reward', 'Tier Large']"
         />
         <Item
           icon="Platforms"
-          name="L Plat. A"
+          name="Large Platform A"
           :ingredients="['Resin', 'Resin']"
           :machines="['Tier Large']"
         />
         <Item
           icon="Platforms"
-          name="L Plat. B"
+          name="Large Platform B"
           unlock="500"
           :ingredients="['Resin', 'Resin', 'Resin']"
           :machines="['Reward', 'Mission Log', 'Tier Large']"
         />
         <Item
           icon="Platforms"
-          name="L Plat. C"
+          name="Large Platform C"
           unlock="1k"
           :ingredients="['Resin', 'Ceramic', 'Iron']"
           :machines="['Tier Large']"
         />
         <Item
           icon="Platforms"
-          name="L T-Platform"
+          name="Large T-Platform"
           unlock="1k"
           :ingredients="['Aluminum', 'Aluminum', 'Resin']"
           :machines="['Tier Large']"
         />
         <Item
           icon="Platforms"
-          name="L Curved Plat."
+          name="Large Curved Platform"
           unlock="1k"
           :ingredients="['Compound', 'Ceramic', 'Ceramic']"
           :machines="['Tier Large']"
         />
         <Item
           icon="Platforms"
-          name="L Extended Plat."
+          name="Large Extended Platform"
           unlock="500"
           :ingredients="['Resin', 'Resin']"
           :machines="['Reward', 'Mission Log', 'Tier Large']"
         />
         <Item
           icon="Canister"
-          name="L Res. Can."
+          name="Large Resource Canister"
           unlock="5k"
           :ingredients="['Glass', 'Titanium', 'Nanocarbon Alloy']"
           :machines="['Reward', 'Tier Large']"
         />
         <Item
           icon="Storage"
-          name="L Stor."
+          name="Large Storage"
           unlock="2k"
           :ingredients="['Ceramic', 'Ceramic', 'Ceramic']"
           :machines="['Tier Large']"
         />
         <Item
           icon="Storage"
-          name="L Stor. Silo A"
+          name="Large Storage Silo A"
           unlock="5k"
           :ingredients="['Aluminum', 'Aluminum', 'Steel']"
           :machines="['Tier Large']"
         />
         <Item
           icon="Storage"
-          name="L Stor. Silo B"
+          name="Large Storage Silo B"
           unlock="7,5k"
           :ingredients="['Steel', 'Steel', 'Steel']"
           :machines="['Tier Large']"
         />
         <Item
           icon="Storage"
-          name="L Active Stor."
+          name="Large Active Storage"
           unlock="2k"
           :ingredients="['Zinc', 'Aluminum', 'Resin']"
           :machines="['Tier Large']"
@@ -1109,22 +858,21 @@ d        <Item icon="Scrap" name="Scrap" :machines="['Reward', 'Shredder']" />
         />
         <Item
           icon="Rover Seat"
-          name="L Rover Seat"
+          name="Large Rover Seat"
           unlock="2k"
           :ingredients="['Plastic', 'Plastic', 'Compound']"
           :machines="['Reward', 'Tier Large']"
         />
         <Item
           icon="Rover"
-          name="Md Rover"
-          unlock="~4k"
+          name="Medium Rover"
+          unlock="3.75k"
           :ingredients="['Plastic', 'Plastic', 'Rubber']"
           :machines="['Tier Large']"
         />
         <Item
           icon="VTOL"
           name="VTOL"
-          unlock="Mission"
           :ingredients="['Tungsten Carbide', 'Silicone', 'EXO Chip']"
           :machines="['Reward', 'Mission Log', 'Tier Large']"
         />
@@ -1137,12 +885,16 @@ d        <Item icon="Scrap" name="Scrap" :machines="['Reward', 'Shredder']" />
         />
         <Item
           icon="Horn"
-          name="L Fog Horn"
+          name="Large Fog Horn"
           unlock="4k"
           :ingredients="['Plastic', 'Rubber', 'Steel']"
           :machines="['Tier Large']"
         />
-        <Item icon="Horn" name="L Starship Horn" :machines="['Tier Large']" />
+        <Item
+          icon="Horn"
+          name="Large Starship Horn"
+          :machines="['Tier Large']"
+        />
         <Item
           icon="Rail Engine"
           name="Rail Engine"
@@ -1160,7 +912,7 @@ d        <Item icon="Scrap" name="Scrap" :machines="['Reward', 'Shredder']" />
         />
         <Item
           icon="Recreational Sphere"
-          name="Recr. Sphere"
+          name="Recreational Sphere"
           unlock="4,5k"
           :ingredients="['Aluminum Alloy', 'Rubber']"
           :machines="['Tier Large']"
@@ -1173,14 +925,14 @@ d        <Item icon="Scrap" name="Scrap" :machines="['Reward', 'Shredder']" />
         />
         <Item
           icon="Auto Extractor"
-          name="Auto Extr."
+          name="Auto Extractor"
           unlock="7,5k"
           :ingredients="['Tungsten Carbide', 'Rubber', 'Steel', 'EXO Chip']"
           :machines="['Tier Extra Large']"
         />
         <Item
           icon="Shredder"
-          name="XL Shredder"
+          name="Extra Large Shredder"
           unlock="5k"
           :ingredients="['Tungsten Carbide', 'Steel', 'EXO Chip', 'EXO Chip']"
           :machines="['Tier Extra Large']"
@@ -1194,119 +946,119 @@ d        <Item icon="Scrap" name="Scrap" :machines="['Reward', 'Shredder']" />
         />
         <Item
           icon="Wind Turbine"
-          name="XL Wind T."
+          name="Extra Large Wind T."
           unlock="4,5k"
           :ingredients="['Iron', 'Ceramic', 'Graphene', 'Aluminum Alloy']"
           :machines="['Tier Extra Large']"
         />
         <Item
           icon="Sensor"
-          name="Md S. Arch"
+          name="Medium Sensor Arch"
           unlock="500"
           :ingredients="['Zinc', 'Quartz']"
           :machines="['Tier Extra Large']"
         />
         <Item
           icon="Sensor"
-          name="XL S. Arch"
+          name="Extra Large Sensor Arch"
           unlock="1k"
           :ingredients="['Zinc', 'Zinc', 'Quartz', 'Quartz']"
           :machines="['Tier Extra Large']"
         />
         <Item
           icon="Sensor"
-          name="XL Canopy"
+          name="Extra Large Canopy"
           unlock="1k"
           :ingredients="['Zinc', 'Zinc', 'Quartz', 'Quartz']"
           :machines="['Tier Extra Large']"
         />
         <Item
           icon="Sensor"
-          name="L Sens. Ring"
+          name="Large Sensor Ring"
           unlock="500"
           :ingredients="['Zinc', 'Quartz']"
           :machines="['Tier Extra Large']"
         />
         <Item
           icon="Sensor"
-          name="L Hoop A"
+          name="Large Hoop A"
           unlock="750"
           :ingredients="['Zinc', 'Quartz', 'Quartz']"
           :machines="['Tier Extra Large']"
         />
         <Item
           icon="Sensor"
-          name="L Hoop B"
+          name="Large Hoop B"
           unlock="750"
           :ingredients="['Zinc', 'Zinc', 'Quartz']"
           :machines="['Tier Extra Large']"
         />
         <Item
           icon="Sensor"
-          name="XL Hoop A"
+          name="Extra Large Hoop A"
           unlock="750"
           :ingredients="['Zinc', 'Zinc', 'Quartz', 'Quartz']"
           :machines="['Tier Extra Large']"
         />
         <Item
           icon="Sensor"
-          name="XL Hoop B"
+          name="Extra Large Hoop B"
           unlock="1k"
           :ingredients="['Zinc', 'Zinc', 'Zinc', 'Quartz']"
           :machines="['Tier Extra Large']"
         />
         <Item
           icon="Platforms"
-          name="XL Plat. A"
+          name="Extra Large Platform A"
           unlock="2k"
           :ingredients="['Iron', 'Iron', 'Ceramic', 'Ceramic']"
           :machines="['Tier Extra Large']"
         />
         <Item
           icon="Platforms"
-          name="XL Plat. B"
+          name="Extra Large Platform B"
           unlock="3k"
           :ingredients="['Iron', 'Iron', 'Iron', 'Iron']"
           :machines="['Tier Extra Large']"
         />
         <Item
           icon="Platforms"
-          name="XL Plat. C"
+          name="Extra Large Platform C"
           unlock="2k"
           :ingredients="['Resin', 'Resin', 'Resin', 'Iron']"
           :machines="['Tier Extra Large']"
         />
         <Item
           icon="Platforms"
-          name="XL C. Plat."
+          name="Extra Large Curved Platform"
           unlock="2k"
           :ingredients="['Ceramic', 'Ceramic', 'Compound', 'Compound']"
           :machines="['Tier Extra Large']"
         />
         <Item
           icon="Platforms"
-          name="XL Ext. Plat."
+          name="Extra Large Extended Platform"
           unlock="750"
           :ingredients="['Resin', 'Resin', 'Resin']"
           :machines="['Tier Extra Large']"
         />
         <Item
           icon="Platforms"
-          name="Fig. Plat."
+          name="Figure Platform"
           unlock="3k"
           :ingredients="['Iron', 'Iron', 'Iron', 'Iron']"
           :machines="['Tier Extra Large']"
         />
         <Item
           icon="Storage"
-          name="XL Stor."
+          name="Extra Large Storage"
           unlock="2k"
           :ingredients="['Iron', 'Iron', 'Ceramic', 'Ceramic']"
           :machines="['Tier Extra Large']"
         />
         <Item
           icon="Rover"
-          name="L Rover"
+          name="Large Rover"
           unlock="5k"
           :ingredients="['Aluminum Alloy', 'Rubber', 'EXO Chip', 'EXO Chip']"
           :machines="['Tier Extra Large']"
@@ -1320,21 +1072,21 @@ d        <Item icon="Scrap" name="Scrap" :machines="['Reward', 'Shredder']" />
         />
         <Item
           icon="Shuttle"
-          name="Sm Shuttle"
+          name="Small Shuttle"
           unlock="1,5k"
           :ingredients="['Aluminum', 'Aluminum']"
           :machines="['Tier Extra Large']"
         />
         <Item
           icon="Shuttle"
-          name="Md Shuttle"
-          unlock="~4k"
+          name="Medium Shuttle"
+          unlock="3.75k"
           :ingredients="['Aluminum Alloy', 'Ceramic', 'Ceramic']"
           :machines="['Mission Log', 'Tier Extra Large']"
         />
         <Item
           icon="Shuttle"
-          name="L Shuttle"
+          name="Large Shuttle"
           unlock="5k"
           :ingredients="['Titanium Alloy', 'Ceramic', 'EXO Chip', 'EXO Chip']"
           :machines="['Reward', 'Mission Log', 'Tier Extra Large']"
@@ -1352,7 +1104,7 @@ d        <Item icon="Scrap" name="Scrap" :machines="['Reward', 'Shredder']" />
           :ingredients="['Astronium', 'Scrap']"
           :machines="['Reward', 'Mission Log', 'Tier Medium']"
         />
-      </Process>
+      </Box>
     </Box>
   </Page>
 </template>

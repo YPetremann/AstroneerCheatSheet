@@ -1,84 +1,54 @@
 <script lang="ts" setup>
-  import Icon from "./Icon.vue";
-  import planets from "../data/planets";
-  import Box from "./Box.vue";
-  const props = defineProps<{
-    name: string;
-    scrap?: string;
-    planets?: string[];
-    machines?: string[];
-  }>();
+  const all_planets = usePlanets();
+  const props = defineProps<{ name: string }>();
+  const {
+    scrap = undefined,
+    machines = [],
+    planets,
+    ingredients = [],
+  } = useResource(props.name);
 </script>
 
 <template>
-  <Box type="recipe" class="Mineral">
-    <Icon :name="name" size="medium" class="Mineral__Icon" />
-    <div class="Mineral__Name">{{ name }}</div>
-    <div class="Mineral__Machines">
-      <div v-if="scrap" class="Mineral__Scrap">
-        {{ scrap }}<Icon name="Scrap" size="small" />
-      </div>
-      <template v-if="machines" v-for="(name, i) in machines" :key="i">
-        <Icon :name="name" size="small" />
-      </template>
+  <Box type="recipe">
+    <Icon :name="name" size="big" class="Box__icon" />
+    <div class="Box__top">
+      <div class="Box__text">{{ name }}</div>
+      <hr class="Box__filler" />
+      <Icon v-if="scrap" name="Scrap" size="small" :pre="scrap" />
+      <Icon
+        v-for="(name, i) in machines"
+        :key="name"
+        :name="name"
+        size="small"
+      />
     </div>
-    <div v-if="planets" class="Mineral__Planets">
-      <template v-for="(name, i) in planets" :key="i">
+    <div class="Box__bottom">
+      <template v-if="planets">
         <Icon
+          v-for="name in all_planets"
+          :key="name"
           :name="name"
           size="small"
           :class="{
             planet: true,
-            'planet--secondary': props.planets?.includes(`-${name}`),
-            'planet--primary': props.planets?.includes(name),
+            'planet--secondary': planets?.includes(`-${name}`),
+            'planet--primary': planets?.includes(name),
           }"
         />
       </template>
+      <hr class="Box__filler" />
+      <Icon
+        v-for="(name, i) in ingredients"
+        :key="name"
+        :name="name"
+        size="small"
+      />
     </div>
   </Box>
 </template>
 
 <style lang="scss">
-  .Mineral {
-    display: grid;
-    grid-template:
-      "icon name machines" 20px
-      "icon planets planets" 20px
-      / min-content auto auto;
-    gap: var(--separator);
-    align-items: center;
-    background: #fff;
-    border-radius: 13px;
-
-    &__Icon {
-      grid-area: icon;
-      height: 100%;
-      height: 100%;
-      align-self: center;
-    }
-    &__Name {
-      grid-area: name;
-    }
-    &__Machines {
-      color: silver;
-      justify-self: end;
-      display: flex;
-      align-items: flex-end;
-      grid-area: machines;
-    }
-    &__Scrap {
-      display: flex;
-      align-items: flex-end;
-    }
-    &__Planets {
-      grid-area: planets;
-      display: flex;
-      align-self: start;
-      justify-self: end;
-
-      gap: 3px;
-    }
-  }
   .planet {
     opacity: 5%;
     &--secondary {

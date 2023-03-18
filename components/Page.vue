@@ -9,7 +9,7 @@
     height: 1080px;
     width: 1920px;
 
-    padding: 15px;
+    padding: 20px;
     gap: 30px;
   }
 </style>

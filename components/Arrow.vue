@@ -15,12 +15,11 @@
     // @ts-ignore
     return { x, y, d };
   }
-
   function calc(c: Coords): [number, number] {
-    const o = 8;
-    const fx = c.x * 270 - 15 - (c.d.includes("L") ? 240 : 0);
+    const o = 10;
+    const fx = c.x * 250 - 10 - (c.d.includes("L") ? 220 : 0);
     const fy =
-      c.y * 65 - 30 + o * (c.d.includes("U") ? -1 : c.d.includes("D") ? +1 : 0);
+      c.y * 60 - 10 + o * (c.d.includes("U") ? -1 : c.d.includes("D") ? +1 : 0);
     return [fx, fy];
   }
 
