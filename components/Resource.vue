@@ -12,21 +12,21 @@
 
 <template>
   <Box type="recipe" class="Mineral">
-    <Icon :name="name" class="Mineral__Icon" />
+    <Icon :name="name" size="medium" class="Mineral__Icon" />
     <div class="Mineral__Name">{{ name }}</div>
     <div class="Mineral__Machines">
       <div v-if="scrap" class="Mineral__Scrap">
-        {{ scrap }}<Icon name="Scrap" size="20px" />
+        {{ scrap }}<Icon name="Scrap" size="small" />
       </div>
       <template v-if="machines" v-for="(name, i) in machines" :key="i">
-        <Icon :name="name" size="20px" />
+        <Icon :name="name" size="small" />
       </template>
     </div>
     <div v-if="planets" class="Mineral__Planets">
       <template v-for="(name, i) in planets" :key="i">
         <Icon
           :name="name"
-          size="20px"
+          size="small"
           :class="{
             planet: true,
             'planet--secondary': props.planets?.includes(`-${name}`),

@@ -31,10 +31,9 @@
       flex-direction: row;
       flex-wrap: wrap;
       margin: -15px;
-      height: 100vh;
+      height: 1080px;
       gap: 5px;
-    }
-    &--compact &__Title {
+      align-content: center;
     }
     hr {
       flex-basis: 100%;

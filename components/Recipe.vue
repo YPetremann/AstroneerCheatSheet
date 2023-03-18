@@ -16,15 +16,15 @@
     <div class="Recipe__Name">{{ name }}</div>
     <div class="Recipe__Machines">
       <div v-if="scrap" class="Recipe__Scrap">
-        {{ scrap }}<Icon name="Scrap" size="20px" />
+        {{ scrap }}<Icon name="Scrap" size="small" />
       </div>
       <template v-if="machines" v-for="(name, i) in machines" :key="i">
-        <Icon :name="name" size="20px" />
+        <Icon :name="name" size="small" />
       </template>
     </div>
     <div class="Recipe__Planets">
       <template v-for="(name, i) in ingredients" :key="i">
-        <Icon :name="name" size="20px" />
+        <Icon :name="name" size="small" />
       </template>
     </div>
   </Box>

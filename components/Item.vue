@@ -1,40 +1,60 @@
 <script lang="ts" setup>
   import Icon from "./Icon.vue";
-  import planets from "../data/planets";
   import Box from "./Box.vue";
   const props = defineProps<{
     name: string;
     icon?: string;
     title?: boolean;
-    ingredients?: string[];
     unlock?: number | string;
+    ingredients?: string[];
+    machines?: string[];
   }>();
   const icon = props.icon ?? props.name;
+  const clv = Object.fromEntries(
+    [props.name, ...(props.ingredients ?? [])].map((name) => [
+      `is-visible-with-${name}`,
+      true,
+    ])
+  );
+  function isNumber(val: number | string) {
+    if (typeof val === "number") return true;
+    if (/^(?=,?\.?[0-9])[0-9]+(\,[0-9]+)?(\.[0-9]+)?k?$/.test(val)) return true;
+    return false;
+  }
+  const visible = inject("visible");
+  const cl = `${
+    visible.value.includes("all") || visible.value.includes(props.name)
+      ? ""
+      : "Icon--dim"
+  }`;
 </script>
 
 <template>
-  <Box type="Item" :class="{ Item: true, 'Item--title': title }">
-    <Icon :name="icon" size="20px" class="Item__Icon icon20" />
-    <div class="Item__Name">{{ name }}</div>
-    <div v-if="unlock == 'Mission'" class="Item__Unlock">
-      <Icon name="Mission Log" class="icon20" />
+  <Box type="Item" :class="{ Item: true, 'Item--title': title, ...clv }">
+    <div class="Item__Icons">
+      <Icon :name="icon" size="small" />
+      {{ name }}
     </div>
-    <div v-else-if="unlock" class="Item__Unlock">
-      {{ unlock }}<Icon name="Research" size="20px" />
+    <div v-if="unlock == 'Mission'" class="Item__Icons">
+      <Icon name="Mission Log" size="small" />
     </div>
-    <div v-if="ingredients" class="Item__Ingredients">
+    <div v-else-if="unlock" class="Item__Icons Item__Unlock">
+      {{ unlock }}<Icon v-if="isNumber(unlock)" name="Research" size="small" />
+    </div>
+    <div v-if="machines" class="Item__Icons">
+      <template v-for="name in machines" :key="name">
+        <Icon :name="name" size="small" />
+      </template>
+    </div>
+    <div v-if="ingredients" class="Item__Icons">
       <template v-for="(name, i) in ingredients" :key="i">
-        <Icon :name="name" size="20px" />
+        <Icon :name="name" size="small" />
       </template>
     </div>
   </Box>
 </template>
 
 <style lang="scss">
-  .icon20 {
-    width: 20px;
-    height: 20px;
-  }
   .Item {
     display: flex;
     align-items: center;
@@ -45,25 +65,14 @@
     &--title {
       flex-basis: 100%;
     }
-
-    &__Name {
+    &__Icons {
+      display: flex;
       white-space: nowrap;
-    }
-    &:after {
-      content: "";
-      flex-grow: 1;
+      align-items: center;
     }
     &__Unlock {
-      order: 1;
       color: #099bf0;
-      display: flex;
-      align-items: flex-end;
-      padding-left: 1px;
-    }
-    &__Ingredients {
-      order: 1;
-      display: flex;
-      align-items: flex-end;
+      padding-left: 4px;
     }
   }
 </style>

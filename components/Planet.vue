@@ -16,31 +16,32 @@
 
 <template>
   <Box type="recipe" class="Planet">
-    <Icon :name="name" class="Planet__Icon" />
+    <Icon :name="name" size="medium" class="Planet__Icon" />
     <div class="Planet__Name">
-      <Icon :name="`Gateway_${name}`" class="Planet__Gateway" />{{ name }}
+      <Icon :name="`Gateway_${name}`" size="small" class="Planet__Gateway" />
+      {{ name }}
     </div>
     <div v-if="minerals" class="Planet__Minerals">
       <template v-for="(name, i) in minerals" :key="i">
         <Icon
           :name="removeDash(name)"
-          size="20px"
+          size="small"
           :class="{ mineral: true, 'mineral--secondary': name.startsWith('-') }"
         />
       </template>
     </div>
     <div class="Planet__Properties">
-      <Icon :name="gateway" size="20px" />
+      <Icon :name="gateway" size="small" />
       <div :class="`energy energy--solar-${solar}  energy--wind-${wind}`">
-        <Icon name="Solar Panel" size="20px" class="energy energy__solar" />
-        <Icon name="Wind Turbine" size="20px" class="energy energy__wind" />
+        <Icon name="Solar Panel" size="small" class="energy energy__solar" />
+        <Icon name="Wind Turbine" size="small" class="energy energy__wind" />
       </div>
     </div>
     <div class="Planet__Gases">
       <template v-for="(name, i) in gases" :key="i">
         <Icon
           :name="removeDash(name)"
-          size="20px"
+          size="small"
           :class="{ mineral: true, 'mineral--secondary': name.startsWith('-') }"
         />
       </template>
