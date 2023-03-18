@@ -10,7 +10,8 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "deploy": "rsync --delete -aP .output/public/ anta5144@109.234.164.228:/home/anta5144/public_html/astroneer"
   },
   "devDependencies": {
     "@nuxtjs/google-analytics": "^2.4.0",

@@ -63,12 +63,12 @@
       color: silver;
       justify-self: end;
       display: flex;
-      align-items: end;
+      align-items: flex-end;
       grid-area: machines;
     }
     &__Scrap {
       display: flex;
-      align-items: end;
+      align-items: flex-end;
     }
     &__Planets {
       grid-area: planets;

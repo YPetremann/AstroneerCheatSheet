@@ -32,7 +32,7 @@
     <div class="Planet__Properties">
       <Icon :name="gateway" size="20px" />
       <div :class="`energy energy--solar-${solar}  energy--wind-${wind}`">
-        <Icon name="Solar" size="20px" class="energy energy__solar" />
+        <Icon name="Solar Panel" size="20px" class="energy energy__solar" />
         <Icon name="Wind Turbine" size="20px" class="energy energy__wind" />
       </div>
     </div>
@@ -124,7 +124,7 @@
     }
     &__Scrap {
       display: flex;
-      align-items: end;
+      align-items: flex-end;
     }
   }
 </style>

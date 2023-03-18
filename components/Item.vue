@@ -17,7 +17,7 @@
     <Icon :name="icon" size="20px" class="Item__Icon icon20" />
     <div class="Item__Name">{{ name }}</div>
     <div v-if="unlock == 'Mission'" class="Item__Unlock">
-      <Icon name="Mission_Log" class="icon20" />
+      <Icon name="Mission Log" class="icon20" />
     </div>
     <div v-else-if="unlock" class="Item__Unlock">
       {{ unlock }}<Icon name="Research" size="20px" />
@@ -57,13 +57,13 @@
       order: 1;
       color: #099bf0;
       display: flex;
-      align-items: end;
+      align-items: flex-end;
       padding-left: 1px;
     }
     &__Ingredients {
       order: 1;
       display: flex;
-      align-items: end;
+      align-items: flex-end;
     }
   }
 </style>
