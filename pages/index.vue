@@ -5,7 +5,6 @@
   import ArrowGroup from "../components/ArrowGroup.vue";
   import Page from "../components/Page.vue";
   import Resource from "../components/Resource.vue";
-  import Recipe from "../components/Recipe.vue";
   import Planet from "../components/Planet.vue";
   import Box from "../components/Box.vue";
   import Item from "../components/Item.vue";

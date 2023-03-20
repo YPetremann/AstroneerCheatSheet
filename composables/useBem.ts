@@ -1,14 +1,15 @@
 export function useBem(name) {
   function self(second?: any, props?: any) {
-    if (typeof second === "string") name = `${name}__${second}`;
+    let _name = name;
+    if (typeof second === "string") _name = `${_name}__${second}`;
     else if (second) props = second;
     else props = {};
-    let ret = name;
+    let ret = _name;
     for (const k in props) {
       const v = props[k];
       if (!v) undefined;
-      else if (v === true) ret += ` ${name}--${k}`;
-      else ret += ` ${name}--${k}-${v}`;
+      else if (v === true) ret += ` ${_name}--${k}`;
+      else ret += ` ${_name}--${k}-${v}`;
     }
     return ret;
   }

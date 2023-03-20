@@ -39,12 +39,12 @@
     &--wind-great &__wind {
       background: #099bf099;
     }
-    &--solar-good.energy--wind-good &__solar {
+    &--solar-good.Energy--wind-good &__solar {
       border-right-width: 0;
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
     }
-    &--solar-good.energy--wind-good &__wind {
+    &--solar-good.Energy--wind-good &__wind {
       border-left-width: 0;
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
