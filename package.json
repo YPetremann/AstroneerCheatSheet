@@ -2,24 +2,25 @@
   "name": "astroneercheatsheet",
   "description": "",
   "version": "1.0.0",
+  "type": "module",
   "author": "",
   "license": "ISC",
   "private": true,
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare",
-    "deploy": "rsync --delete -aP .output/public/ anta5144@109.234.164.228:/home/anta5144/public_html/astroneer"
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "bunx biome check --write",
+    "preview": "vite preview"
   },
   "devDependencies": {
-    "@nuxtjs/google-analytics": "^2.4.0",
-    "nuxt": "^3.3.1"
+    "@biomejs/biome": "2.1.2",
+    "@tailwindcss/vite": "^4.1.11",
+    "@vitejs/plugin-vue": "^6.0.0",
+    "tailwindcss": "^4.1.11",
+    "vite": "^7.0.5"
   },
   "dependencies": {
-    "@vueuse/nuxt": "^9.13.0",
-    "sass": "^1.59.3",
-    "vue": "^3.2.47"
+    "sass-embedded": "^1.89.2",
+    "vue": "^3.5.17"
   }
 }

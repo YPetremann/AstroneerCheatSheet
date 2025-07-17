@@ -1,9 +1,12 @@
 <script lang="ts" setup>
-  defineProps<{
-    name?: string;
-    icon?: string;
-    compact?: boolean;
-  }>();
+import Box from "./Box.vue";
+import Icon from "./Icon.vue";
+
+defineProps<{
+  name?: string;
+  icon?: string;
+  compact?: boolean;
+}>();
 </script>
 
 <template>

@@ -1,10 +1,12 @@
 <script lang="ts" setup>
-  const props = defineProps<{
-    type?: string;
-    filled?: boolean;
-    compact?: boolean;
-  }>();
-  const box = useBem("Box");
+import { useBem } from "../composables/useBem";
+
+const props = defineProps<{
+  type?: string;
+  filled?: boolean;
+  compact?: boolean;
+}>();
+const box = useBem("Box");
 </script>
 <template>
   <div :class="box(props)">
@@ -15,50 +17,46 @@
 <style lang="scss">
   .Box {
     &--type-item {
-      display: flex;
       align-items: center;
+      display: flex;
+      min-width: 230px;
     }
     &--type-recipe {
-      width: 200px;
-      height: 40px;
-      overflow: hidden;
+      border-radius: 22px 11px 11px 22px;
       display: grid;
       grid-template:
         "icon top" auto
         "icon bottom" auto
         / min-content auto;
+      height: 40px;
+      overflow: hidden;
+      width: 180px;
       &:not(:empty) {
         background: #fff;
-        border-radius: 11px;
-        border-top-left-radius: 22px;
-        border-bottom-left-radius: 22px;
       }
     }
     &--type-process {
+      border-radius: 32px 22px 22px 32px;
       display: flex;
       flex-direction: column;
-      padding: 10px;
       gap: 20px;
-      border-radius: 22px;
-      border-top-left-radius: 32px;
-      border-bottom-left-radius: 32px;
+      padding: 10px;
     }
     &--filled {
       background: #099bf0;
     }
 
     &--compact {
-      box-sizing: border-box;
+      align-content: center;
       border-radius: 0;
+      box-sizing: border-box;
       flex-direction: row;
       flex-wrap: wrap;
-      margin: -20px;
-      margin-left: -15px;
-      padding: 20px;
-      padding-left: 15px;
-      height: 1080px;
       gap: 5px;
-      align-content: center;
+      height: 1080px;
+      margin: -20px -20px -20px 0;
+      padding: 20px 20px 20px 15px;
+      & > * { flex-grow: 1; }
     }
 
     &--type-divider {
@@ -85,9 +83,8 @@
     }
 
     &__filler {
+      border: 0 solid silver;
       flex-grow: 1;
-      //border: 1px solid silver;
-      border-width: 1px 0;
     }
 
     &__text {

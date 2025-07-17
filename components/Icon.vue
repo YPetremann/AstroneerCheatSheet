@@ -1,11 +1,13 @@
 <script lang="ts" setup>
-  const props = defineProps<{
-    name: string;
-    size?: string;
-    pre?: string;
-    post?: string;
-  }>();
-  let { src, color } = useIcon(props.name);
+import { useIcon } from '../composables/icons';
+
+const props = defineProps<{
+  name: string;
+  size?: string;
+  pre?: string;
+  post?: string;
+}>();
+const { src, color } = useIcon(props.name);
 </script>
 
 <template>
@@ -19,12 +21,12 @@
 <style lang="scss">
   .Icon {
     display: flex;
+    font-weight: 700;
     place-content: center;
     place-items: center;
-    font-weight: bold;
     &__pre {
-      position: relative;
       left: 2px;
+      position: relative;
     }
     &__post {
       position: relative;
@@ -32,7 +34,7 @@
     }
 
     &__img {
-      width: var(--size);
+      min-width: var(--size);
       height: var(--size);
     }
     &--dim {

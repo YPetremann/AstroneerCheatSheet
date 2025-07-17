@@ -1,0 +1,188 @@
+.Box--type-item {
+  align-items: center;
+  display: flex;
+  min-width: 230px;
+}
+.Box--type-recipe {
+  border-radius: 22px 11px 11px 22px;
+  display: grid;
+  grid-template: "icon top" auto "icon bottom" auto / min-content auto;
+  height: 40px;
+  overflow: hidden;
+  width: 180px;
+}
+.Box--type-recipe:not(:empty) {
+  background: #fff;
+}
+.Box--type-process {
+  border-radius: 32px 22px 22px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 10px;
+}
+.Box--filled {
+  background: #099bf0;
+}
+.Box--compact {
+  align-content: center;
+  border-radius: 0;
+  box-sizing: border-box;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 5px;
+  height: 1080px;
+  margin: -20px -20px -20px 0;
+  padding: 20px 20px 20px 15px;
+}
+.Box--compact > * {
+  flex-grow: 1;
+}
+.Box--type-divider {
+  display: flex;
+  flex-direction: column;
+}
+.Box__icon {
+  grid-area: icon;
+}
+.Box__top {
+  grid-area: top;
+}
+.Box__bottom {
+  grid-area: bottom;
+}
+.Box__bottom,
+.Box__top {
+  display: flex;
+  height: 20px;
+  justify-content: center;
+  place-items: center;
+}
+.Box__filler {
+  border: 0 solid silver;
+  flex-grow: 1;
+}
+.Box__text {
+  padding: 0 4px;
+  white-space: nowrap;
+}
+.Box__text:first-child,
+.Icon + .Box__text {
+  padding-left: 0;
+}
+.Box__text:has(+ .Icon),
+.Box__text:has(.Box__filler + .Icon),
+.Box__text:last-child {
+  padding-right: 0;
+}
+
+.Process__title {
+  align-items: center;
+  color: #fff;
+  display: flex;
+  flex-basis: 100%;
+  font-weight: bolder;
+  gap: 10px;
+}
+.Process__icon {
+  border-radius: 100px;
+  overflow: hidden;
+}
+.Page {
+  box-sizing: border-box;
+  display: flex;
+  gap: 20px;
+  height: 1080px;
+  padding: 20px;
+  width: 1920px;
+}
+.planet {
+  opacity: 5%;
+}
+.planet--secondary {
+  opacity: 50%;
+}
+.planet--primary {
+  opacity: 100%;
+}
+.Energy {
+  display: flex;
+}
+.Energy__solar,
+.Energy__wind {
+  border-radius: 5px;
+}
+.Energy__solar img,
+.Energy__wind img {
+  mix-blend-mode: darken;
+}
+.Energy--solar-worst .Energy__solar,
+.Energy--wind-worst .Energy__wind {
+  opacity: 10%;
+}
+.Energy--solar-bad .Energy__solar,
+.Energy--wind-bad .Energy__wind {
+  opacity: 50%;
+}
+.Energy--solar-good .Energy__solar,
+.Energy--wind-good .Energy__wind {
+  background: rgba(9, 155, 240, 0.267);
+}
+.Energy--solar-great .Energy__solar,
+.Energy--wind-great .Energy__wind {
+  background: rgba(9, 155, 240, 0.6);
+}
+.Energy--solar-good.Energy--wind-good .Energy__solar {
+  border-bottom-right-radius: 0;
+  border-right-width: 0;
+  border-top-right-radius: 0;
+}
+.Energy--solar-good.Energy--wind-good .Energy__wind {
+  border-bottom-left-radius: 0;
+  border-left-width: 0;
+  border-top-left-radius: 0;
+}
+@property --width {
+  syntax: "<length>";
+  inherits: false;
+}
+@property --gap {
+  syntax: "<length>";
+  inherits: false;
+}
+@property --widthGap {
+  syntax: "<length>";
+  inherits: false;
+}
+@property --size {
+  syntax: "<length>";
+  inherits: false;
+}
+.Item {
+  border-radius: 11px;
+  min-width: var(--width);
+  position: relative;
+  width: auto;
+}
+.Item:before {
+  background: #000;
+  border-top-right-radius: 11px;
+  bottom: 0;
+  color: #fff;
+  content: attr(data-width);
+  left: 0;
+  padding: 1px 4px;
+  position: absolute;
+}
+:root {
+  font-family: sans-serif;
+  font-size: 12px;
+}
+body {
+  display: flex;
+  margin: 0;
+  place-items: center;
+}
+#app {
+  margin: 0 auto;
+}

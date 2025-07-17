@@ -1,12 +1,17 @@
 <script lang="ts" setup>
-  const all_planets = usePlanets();
-  const props = defineProps<{ name: string }>();
-  const {
-    scrap = undefined,
-    machines = [],
-    planets,
-    ingredients = [],
-  } = useResource(props.name);
+import { usePlanets } from "../composables/planets";
+import { useResource } from "../composables/resources";
+import Box from "./Box.vue";
+import Icon from "./Icon.vue";
+
+const all_planets = usePlanets();
+const props = defineProps<{ name: string }>();
+const {
+  scrap = undefined,
+  machines = [],
+  planets,
+  ingredients = [],
+} = useResource(props.name);
 </script>
 
 <template>

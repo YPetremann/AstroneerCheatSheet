@@ -1,24 +1,25 @@
 <script lang="ts" setup>
-  import { provide } from "vue";
-  import Process from "../components/Process.vue";
-  import Arrow from "../components/Arrow.vue";
-  import ArrowGroup from "../components/ArrowGroup.vue";
-  import Page from "../components/Page.vue";
-  import Resource from "../components/Resource.vue";
-  import Planet from "../components/Planet.vue";
-  import Box from "../components/Box.vue";
-  import Item from "../components/Item.vue";
-  const all_planets = [
-    "Sylva",
-    "Desolo",
-    "Calidor",
-    "Vesania",
-    "Novus",
-    "Glacio",
-    "Atrox",
-  ];
-  const visible = ref(["all"]);
-  provide("visible", visible);
+import { provide, ref } from "vue";
+import Arrow from "../components/Arrow.vue";
+import ArrowGroup from "../components/ArrowGroup.vue";
+import Box from "../components/Box.vue";
+import Item from "../components/Item.vue";
+import Page from "../components/Page.vue";
+import Planet from "../components/Planet.vue";
+import Process from "../components/Process.vue";
+import Resource from "../components/Resource.vue";
+
+const all_planets = [
+  "Sylva",
+  "Desolo",
+  "Calidor",
+  "Vesania",
+  "Novus",
+  "Glacio",
+  "Atrox",
+];
+const visible = ref(["all"]);
+provide("visible", visible);
 </script>
 
 <template>

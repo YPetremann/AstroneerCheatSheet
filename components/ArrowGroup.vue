@@ -1,8 +1,8 @@
 <template>
-  <g style="stroke: white; stroke-width: 9px">
+  <g style="stroke:#099bf0;stroke-width:12px;">
     <slot></slot>
   </g>
-  <g style="stroke: black; stroke-width: 3px">
+  <g style="stroke:white;stroke-width:4px;  stroke-linecap: square;">
     <slot></slot>
   </g>
 </template>

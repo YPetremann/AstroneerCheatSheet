@@ -1,9 +1,12 @@
 <script setup lang="ts">
-  const props = defineProps<{
-    solar: string;
-    wind: string;
-  }>();
-  const bem = useBem("Energy");
+import { useBem } from "../composables/useBem";
+import Icon from "./Icon.vue";
+
+const props = defineProps<{
+  solar: string;
+  wind: string;
+}>();
+const bem = useBem("Energy");
 </script>
 
 <template>

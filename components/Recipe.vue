@@ -1,11 +1,14 @@
 <script lang="ts" setup>
-  const planets = usePlanets();
-  const props = defineProps<{
-    name: string;
-    scrap?: string;
-    ingredients?: string[];
-    machines?: string[];
-  }>();
+import Box from "./Box.vue";
+import Icon from "./Icon.vue";
+
+const planets = usePlanets();
+const props = defineProps<{
+  name: string;
+  scrap?: string;
+  ingredients?: string[];
+  machines?: string[];
+}>();
 </script>
 
 <template>

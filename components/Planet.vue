@@ -1,7 +1,12 @@
 <script lang="ts" setup>
-  const props = defineProps<{ name: string }>();
-  const planet = usePlanet(props.name);
-  const removeDash = (v: string) => (v.startsWith("-") ? v.slice(1) : v);
+import { usePlanet } from "../composables/planets";
+import Box from "./Box.vue";
+import Energy from "./Energy.vue";
+import Icon from "./Icon.vue";
+
+const props = defineProps<{ name: string }>();
+const planet = usePlanet(props.name);
+const removeDash = (v: string) => (v.startsWith("-") ? v.slice(1) : v);
 </script>
 
 <template>

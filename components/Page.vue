@@ -6,10 +6,9 @@
   .Page {
     box-sizing: border-box;
     display: flex;
+    gap: 20px;
     height: 1080px;
-    width: 1920px;
-
     padding: 20px;
-    gap: 30px;
+    width: 1920px;
   }
 </style>

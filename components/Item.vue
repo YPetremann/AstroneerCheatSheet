@@ -1,20 +1,21 @@
 <script lang="ts" setup>
-  import Icon from "./Icon.vue";
-  import Box from "./Box.vue";
-  defineProps<{
-    name: string;
-    icon?: string;
-    title?: boolean;
-    unlock?: number | string;
-    ingredients?: string[];
-    machines?: string[];
-  }>();
-  const el = ref(null);
-  const { width } = useElementSize(el);
+import { ref } from "vue";
+import Box from "./Box.vue";
+import Icon from "./Icon.vue";
+
+defineProps<{
+  name: string;
+  icon?: string;
+  title?: boolean;
+  unlock?: number | string;
+  ingredients?: string[];
+  machines?: string[];
+}>();
+const el = ref(null);
 </script>
 
 <template>
-  <Box type="item" class="Item" ref="el" :data-width="Math.floor(width)">
+  <Box type="item" class="Item" ref="el">
     <Icon :name="icon ?? name" size="small" />
     {{ name }}
     <Icon v-if="unlock" name="Research" size="small" :pre="`${unlock}`" />
